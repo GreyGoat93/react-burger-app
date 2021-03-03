@@ -50,12 +50,21 @@ const BurgerBuilder = () => {
 
     const toggleOrderModal = (val) => {
         setShowOrderModal(val);
-    }   
+    }
+    
+    const continueOrder = () => {
+        setShowOrderModal(false);
+        alert('Congrats! You have ordered.')
+    }
 
     return (
         <Auxiliary>
             <Modal show={showOrderModal} disappear={toggleOrderModal}>
-                <OrderSummary ingredients={ingredients}/>
+                <OrderSummary 
+                ingredients={ingredients}
+                cancelClicked={[toggleOrderModal, [false]]}
+                continueClicked={continueOrder}
+                orderSum={totalPrice}/>
             </Modal>
             <Burger ingredients={ingredients}></Burger>
             <BurgerControls 

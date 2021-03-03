@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '../../UI/Button/Button'
+
 const OrderSummary = (props) => {
     let list = Object.keys(props.ingredients).map(igKey => {
         return (
@@ -15,6 +17,13 @@ const OrderSummary = (props) => {
             <ul>
                 {list}
             </ul>
+            <p>Total: {props.orderSum}₺</p>
+            <div>
+                <Button btnStyle='Danger' 
+                clicked={props.cancelClicked}>CANCEL</Button>
+                <Button btnStyle='Success'
+                clicked={props.continueClicked}>CONTINUE</Button>
+            </div>
         </div>
     )
 }
