@@ -64,7 +64,8 @@ const BurgerBuilder = () => {
                 ingredients={ingredients}
                 cancelClicked={[toggleOrderModal, [false]]}
                 continueClicked={continueOrder}
-                orderSum={totalPrice}/>
+                orderSum={totalPrice}
+                show={showOrderModal}/>
             </Modal>
             <Burger ingredients={ingredients}></Burger>
             <BurgerControls 

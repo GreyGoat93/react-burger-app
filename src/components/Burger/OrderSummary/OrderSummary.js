@@ -28,4 +28,8 @@ const OrderSummary = (props) => {
     )
 }
 
-export default OrderSummary;
+function areEqual(prevProps, nextProps){
+    return prevProps.show === nextProps.show;
+}
+
+export default React.memo(OrderSummary, areEqual);
